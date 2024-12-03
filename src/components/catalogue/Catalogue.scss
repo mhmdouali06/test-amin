@@ -1,0 +1,170 @@
+.cat__section {
+    height: auto;
+    // background-image: url("../../assets/hero/background.jpg");
+    // background-position: center;
+    // background-size: cover;
+
+    background: rgb(25,60,150);
+    background: linear-gradient(7deg, rgba(25,60,150,1) 7%, rgba(22,52,134,1) 46%, rgba(0,212,255,1) 100%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  
+    .cat__container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+  
+        .cat__title {
+            font-weight: 600;
+            line-height: 1.2;
+            color: whitesmoke;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+  
+        .cat__cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            justify-content: center;
+            align-items: stretch;
+  
+            @media (max-width: 1024px) {
+                grid-template-columns: repeat(2, minmax(240px, 1fr));
+            }
+  
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+  
+            .cat__content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+  
+                .card_img {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    justify-content: center;
+                    align-items: center;
+  
+                    img {
+                        width: 50px;
+                        height: 35px;
+                        object-fit: fill;
+                    }
+  
+                    p {
+                        font-weight: 300;
+                        text-align: center;
+                        color: #fff;
+                    }
+                }
+  
+                .custom-card-credits {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    width: 280px;
+                    max-width: 100%;
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                    padding: 16px;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+                    height: 100%;
+                    background-color: white;
+  
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 5px;
+                        background: linear-gradient(
+                            7deg,
+                            rgba(2, 0, 36, 1) 0%,
+                            rgba(25, 60, 150, 1) 25%,
+                            rgba(22, 52, 134, 1) 25%,
+                            rgba(0, 212, 255, 1) 100%
+                        );
+                        z-index: 1;
+                        transition: height 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+                    }
+  
+                    &:hover {
+                        background: linear-gradient(
+                            7deg,
+                            rgba(2, 0, 36, 1) 0%,
+                            rgba(25, 60, 150, 1) 25%,
+                            rgba(22, 52, 134, 1) 25%,
+                            rgba(0, 212, 255, 1) 100%
+                        );
+                        color: white;
+  
+                        .custom-content-credits {
+                            color: white;
+  
+                            .custom-para-credits {
+                                color: white;
+                            }
+                        }
+  
+                        &::before {
+                            height: 100%;
+                        }
+                    }
+                }
+  
+                .custom-content-credits {
+                    z-index: 2;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 12px;
+                    color: #333;
+                    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  
+                    .custom-para-credits {
+                        line-height: 1.5;
+                        font-size: 0.9rem;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+  
+    @media (max-width: 768px) {
+        .cat__container {
+            .cat__title {
+                font-size: 1.2rem;
+            }
+  
+            .cat__cards {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+  
+            .custom-card-credits {
+                width: 100%;
+                max-width: none;
+                padding: 12px;
+            }
+  
+            .custom-content-credits .custom-para-credits {
+                font-size: 0.85rem;
+            }
+        }
+    }
+}

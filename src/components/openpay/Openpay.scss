@@ -1,0 +1,179 @@
+.openpay__section {
+  background-color: #f9f9f9;
+
+  .openpay__container {
+    padding: 1rem 0;
+
+    .openpay__title h4 {
+      font-weight: 600;
+      line-height: 1.2;
+      color: #2e2f34;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .openpay__title p {
+      font-weight: 400;
+      line-height: 1.2;
+      color: #36a8f3;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .openpay__description {
+      background: #ffffff;
+      color: #464853;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 24px 32px;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 16px auto;
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    .openpay__description:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .openpay__cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      gap: 16px;
+      padding-top: 2rem;
+    }
+
+    .opay__card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .content {
+      width: 250px; 
+      max-width: 100%; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 16px;
+      border-radius: 22px;
+      color: #ffffff;
+      overflow: hidden;
+      background: rgb(25, 60, 150);
+      background: linear-gradient(
+        7deg,
+        rgba(25, 60, 150, 1) 7%,
+        rgba(22, 52, 134, 1) 46%,
+        rgba(0, 212, 255, 1) 100%
+      );
+      transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .content::before {
+      position: absolute;
+      content: "";
+      top: -4%;
+      left: 50%;
+      width: 90%;
+      height: 90%;
+      transform: translate(-50%);
+      background: #ced8ff;
+      z-index: -1;
+      transform-origin: bottom;
+      border-radius: inherit;
+      transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .content::after {
+      position: absolute;
+      content: "";
+      top: -8%;
+      left: 50%;
+      width: 80%;
+      height: 80%;
+      transform: translate(-50%);
+      background: #e7ecff;
+      z-index: -2;
+      transform-origin: bottom;
+      border-radius: inherit;
+      transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .opay__img {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .opay__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .para {
+      z-index: 1;
+      opacity: 1;
+      font-size: 16px;
+      transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .opay__card:hover {
+      transform: translate(0px, -16px);
+    }
+
+    .opay__card:hover .content::before {
+      rotate: -8deg;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .opay__card:hover .content::after {
+      rotate: 8deg;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .openpay__cards {
+    grid-template-columns: 1fr; 
+    gap: 16px;
+  }
+
+  .content {
+    width: 250px;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .para {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content {
+    width: 220px;
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .para {
+    font-size: 12px;
+  }
+}

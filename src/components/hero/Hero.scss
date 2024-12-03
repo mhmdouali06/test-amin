@@ -1,0 +1,211 @@
+/* Hero Styles */
+.hero__section {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../assets/hero/background.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__container {
+  max-width: 1600px;
+  width: 100%;
+  height: 100%; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem; 
+  position: relative;
+  padding: 1rem;
+}
+
+.hero__left {
+  flex: 1;
+  text-align: center;
+}
+
+.hero__left img {
+  width: 75%;
+  height: auto; 
+  object-fit: contain;
+}
+
+.hero__right {
+  background-image: url('../../assets/hero/Picture1.png'), url('../../assets/hero/Picture2.png');
+  background-position: bottom right, bottom right;
+  background-size: 50% auto;
+  background-repeat: no-repeat;
+  flex: 1;
+  height: 100%;
+  padding: 1rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: left;
+  position: relative;
+
+  h1 {
+    font-size: 3.8rem;
+    line-height: 1.2;
+  }
+
+  p {
+    line-height: 1.6;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  padding: 10px 20px;
+  background:none;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute; /* Fixed position for the navbar within hero */
+  top: 0;
+  left: 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Links Style */
+  &__links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    flex-grow: 1;
+
+    li {
+      margin-right: 20px;
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #36a8f3;
+        }
+      }
+    }
+  }
+
+  /* Hamburger Menu Icon for Mobile */
+  &__hamburger {
+    display: none;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: white;
+      transition: all 0.3s ease;
+    }
+  }
+
+  /* Logo on the Right */
+  &__logo {
+    margin-left: 20px;  // Space between logo and links
+    img {
+      width: 120px;  // Adjust size of the logo
+    }
+  }
+
+  /* Mobile Navbar Styles */
+  @media (max-width: 768px) {
+    &__hamburger {
+      display: block;
+    }
+
+    &__links {
+      display: flex;
+      position: fixed;
+      top: 0;
+      right: -100%;  // Hide the menu by default
+      width: 60%;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;  // Prevent interaction when closed
+      overflow: hidden;
+      transition: all 0.3s ease;
+      background-color: rgba(0, 0, 0, 0.7);
+
+      &.open {
+        right: 0;
+        visibility: visible;  // Show the menu when open
+      }
+
+      li {
+        margin: 15px 0;
+      }
+    }
+  }
+}
+
+/* Tablet and Mobile Adjustments */
+@media (max-width: 1024px) {
+  .hero__section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero__container {
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    margin-top: 8rem;
+  }
+
+  .hero__left img {
+    width: 60%;
+    height: auto;
+  }
+
+  .hero__right {
+    width: 100vw; /* Full viewport width */
+    height: 50%; /* Maintain height as 50% */
+    text-align: left; /* Align text to the left */
+    display: flex; /* Ensure flexbox layout */
+    flex-direction: column; /* Maintain column layout */
+    justify-content: flex-start; /* Align content to the top */
+    align-items: flex-start; /* Align items to the left */
+    padding: 2rem; /* Add padding for spacing */
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+

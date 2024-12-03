@@ -1,0 +1,110 @@
+.business__section {
+  background: #f9f9f9;
+  height: auto;
+
+  .business__container {
+    .business__title {
+      font-weight: 600;
+      line-height: 1.2;
+      color: #2e2f34;
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 1.5rem 0;
+
+      @media (max-width: 768px) {
+        font-size: 1.3rem;
+        padding: 1rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 1.1rem;
+      }
+    }
+
+    .bus_content {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 15px;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      .business__card {
+        background: var(--bg);
+        flex: 1 1 calc(30% - 1rem);
+        max-width: 335px;
+        text-align: left;
+        padding: 1rem;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.5em;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        min-height: 250px;
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.05);
+          color: white;
+          background: linear-gradient(
+            7deg,
+            rgba(2, 0, 36, 1) 0%,
+            rgba(25, 60, 150, 1) 25%,
+            rgba(22, 52, 134, 1) 25%,
+            rgba(0, 212, 255, 1) 100%
+          );
+
+          .img-container img {
+            filter: invert(1) grayscale(100%) brightness(100%) !important;
+          }
+
+          .business__card__body,
+          strong {
+            color: white;
+          }
+        }
+                    
+        .img-container {
+          width: 80px;
+          height: 80px;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: filter 0.3s ease-in-out;
+          }
+        }
+
+        strong {
+          font-size: 1rem;
+          letter-spacing: -0.02em;
+          color: rgb(23, 42, 100);
+          text-align: center;
+        }
+
+        .business__card__body {
+          color: #464853;
+          font-size: 0.9rem;
+          line-height: 1.4;
+          text-align: justify;
+          padding: 8px;
+        }
+      }
+    }
+  }
+}

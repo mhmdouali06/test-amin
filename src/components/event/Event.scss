@@ -1,0 +1,119 @@
+.event__section {
+    background-image: url('../../assets/hero/background.jpg');
+    background-position: center;
+    background-size: cover;
+    // background: rgb(25,96,150);
+    // background: linear-gradient(circle, rgba(25,96,150,1) 38%, rgba(25,60,150,1) 81%);
+    padding: 20px;
+    height: 100vh;
+    display: flex; 
+    align-items: stretch; 
+  
+    .event__container {
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      align-items: stretch; 
+      gap: 20px;
+      max-width: 1600px;
+      margin: 0 auto;
+
+      .event__left {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex: 1;
+        overflow: hidden; 
+      
+        .event__title {
+          color: whitesmoke;
+      
+          h2 {
+            font-weight: 600;
+            line-height: 1.2;
+            color: whitesmoke;
+            font-size: 1.5rem;
+          }
+        }
+      
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+          max-height: 100%; 
+          overflow: hidden; 
+        }
+      }
+  
+      .event__right {
+        flex: 1;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+        }
+      
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.3); 
+          z-index: 2;
+        }
+      
+        p {
+          position: relative;
+          z-index: 3;
+          color: whitesmoke;
+          font-size: 1.2rem;
+          text-align: left;
+          padding: 10px 20px;
+          border-radius: 10px;
+        }
+      }
+    }
+  
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .event__container {
+        flex-direction: column;
+      }
+  
+      .event__right {
+        height: 300px;
+      }
+    }
+  
+    /* Mobile */
+    @media (max-width: 480px) {
+      .event__container {
+        gap: 10px;
+      }
+  
+      .event__left .event__title h2 {
+        font-size: 1rem;
+      }
+  
+      .event__right {
+        height: 200px;
+      }
+  
+      .event__right p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  

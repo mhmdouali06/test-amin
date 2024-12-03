@@ -1,0 +1,230 @@
+.partners__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin: 50px;
+}
+
+.partners__section {
+  display: flex;
+  padding: 30px;
+}
+
+.partner-title h4 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.partners__items {
+  display: flex;
+  gap: 50px;
+}
+
+.partner-title h4 {
+  font-size: 56px;
+}
+
+.partners__contents {
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.desc {
+  font-size: 16px;
+  color: #0d2646;
+}
+
+.minip {
+  width: 280px;
+  height: 345px;
+  margin: auto;
+  background: var(--white);
+  position: relative;
+  box-shadow: 0px 0px 5px var(--terracotta);
+  cursor: pointer;
+  background-color:  var(--blueLight);
+}
+
+.minip .mg {
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: grid;
+  grid-template-columns: 230px 50px;
+  grid-template-rows: 84px 150px;
+  grid-template-areas:
+    "clr group"
+    "clr .....";
+  transition: grid-template-columns 0.6s linear, grid-template-rows 0.6s linear;
+}
+.minip:hover .mg {
+  grid-template-columns: 150px 150px;
+  grid-template-rows: 50px 300px;
+  transition: grid-template-columns 0.6s linear, grid-template-rows 0.6s linear;
+}
+.minip .mg .clr {
+  grid-area: clr;
+  background: var(--blue);
+}
+.minip .mg .group {
+  font: 10px/10px var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  writing-mode: vertical-lr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.minip .mg .group span {
+  display: block;
+  transform: rotate(180deg);
+  transition: transform 0.6s linear;
+}
+.minip:hover .mg .group span {
+  transform: rotate(270deg);
+  transition: transform 0.6s linear;
+}
+
+.minip .av {
+  width: 195px;
+  height: 243px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background: var(--green);
+  background-position: top center;
+  background-size: cover;
+  transition: width 0.6s linear, height 0.6s linear;
+}
+.minip:hover .av {
+  width: 220px;
+  height: 300px;
+  transition: width 0.6s linear, height 0.6s linear;
+}
+
+.minip .info {
+  width: 200px;
+  max-height: 100px;
+  padding: 5px;
+  position: absolute;
+  bottom: 46px;
+  left: 0px;
+  background: var(--peach);
+  justify-content: center;
+  align-content: flex-start;
+  text-align: center;
+  transition: bottom 0.6s linear;
+}
+.minip:hover .info {
+  bottom: 50px;
+  transition: bottom 0.6s linear;
+}
+
+.minip .info h6 {
+  font-size: 15px;
+}
+
+.minip .info deets {
+  font: 10px/15px var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.minip a.plot {
+  width: 110px;
+  height: 30px;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  background: var(--dgreen);
+  font: 10px/10px var(--mono);
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: bottom 0.6s linear;
+}
+.minip:hover a.plot {
+  bottom: 15px;
+  transition: bottom 0.6s linear;
+}
+
+
+@media (max-width: 1024px) {
+}
+
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media (max-width: 480px) {
+
+  .partners__section {
+    display: block;
+    padding: 10px;
+  }
+
+  .partners__container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+  }
+
+  .left-content{
+    display: flex;
+    height: 10px;
+  }
+
+
+  
+
+  
+  .partner-title h4 {
+    font-weight: 200;
+    line-height: 1.2;
+    color: #2e2f34;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .partners__items {
+    display:  block;
+    gap: 10px;
+  }
+
+  .items {
+    display:  flex;
+    gap: 5px;
+  }
+  
+  .partner-title h4 {
+    font-size: 36px;
+  }
+  
+  .partners__contents {
+    display: flex;
+
+    gap: 10px;
+  }
+  
+  .desc {
+    font-size: 12px;
+    color: #0d2646;
+  }
+}

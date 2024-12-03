@@ -1,0 +1,70 @@
+.swift__section {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+  
+    .swift__container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+  
+      .swift__left,
+      .swift__right {
+        flex: 1;
+        min-width: 300px;
+      }
+  
+      .swift__left {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+  
+        .swift__title {
+          h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+          }
+        }
+  
+        .swift__description {
+          p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+          }
+        }
+  
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+      }
+  
+      .swift__right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        img {
+          width: 100%;
+          // max-width: 5000px;
+          height: auto;
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .swift__container {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+  
